@@ -11,7 +11,7 @@ power$Time <- paste(power$Date, power$Time)
 power$Time <- as.POSIXct(power$Time)
 
 png(file=".\\ExData_Plotting1\\figure\\plot3.png")
-plot(power$Time, power$Sub_metering_1, type="n", pin=c(480, 480), xlab="", ylab = "Global Active Power (kilowatts)")
+plot(power$Time, power$Sub_metering_1, type="n", pin=c(480, 480), xlab="", ylab = "Energy sub metering")
 points(power$Time, power$Sub_metering_1, type="l")
 points(power$Time, power$Sub_metering_2, type="l", col="red")
 points(power$Time, power$Sub_metering_3, type="l", col="blue")

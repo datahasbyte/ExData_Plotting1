@@ -11,20 +11,20 @@ power$Time <- paste(power$Date, power$Time)
 power$Time <- as.POSIXct(power$Time)
 
 png(file=".\\ExData_Plotting1\\figure\\plot4.png")
-par(mfcol=c(2,2))
+par(mfrow=c(2,2))
 
 # plot 1
-plot(power$Time, power$Global_active_power, type="l", pin=c(480, 480), xlab="", ylab = "Global Active Power (kilowatts)")
+plot(power$Time, power$Global_active_power, type="l", pin=c(480, 480), xlab="", ylab = "Global Active Power")
 
 # plot 2
 plot(power$Time, power$Voltage, type="l", xlab="datetime", ylab="Voltage")
 
 # plot 3
-plot(power$Time, power$Sub_metering_1, type="n", pin=c(480, 480), xlab="", ylab = "Global Active Power (kilowatts)")
+plot(power$Time, power$Sub_metering_1, type="n", pin=c(480, 480), xlab="", ylab = "Energy sub metering")
 points(power$Time, power$Sub_metering_1, type="l")
 points(power$Time, power$Sub_metering_2, type="l", col="red")
 points(power$Time, power$Sub_metering_3, type="l", col="blue")
-legend("topright", pch=c(1,1, 1), col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", pch=c(1,1, 1), col=c("black", "red", "blue"), bty="n", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
 # plot 4
 plot(power$Time, power$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
