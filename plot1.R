@@ -1,8 +1,4 @@
-
-
-# Exploratory Data Analysis
-# Course Project 1
-install.packages("sqldf")
+# Plot 1
 library(sqldf)
 library(lubridate)
 
@@ -13,10 +9,9 @@ power$Time <- paste(power$Date, power$Time)
 power$Time <- strptime(power$Time, format = "%m/%d/%Y %H:%M:%S")
 power$Date <- strptime(as.Date(power$Date, format="%m/%d/%Y"), format="%Y-%m-%d")
 
-head(power$Time)
-head(power$Date)
+png(file=".\\ExData_Plotting1\\figure\\plot1.png")
+with(power, hist(Global_active_power, pin=c(480,480), col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)"))
+dev.off()
 
-class(power$Time)
-class(power$Date)
+hist(power$Global_active_power, col="red")
 
-write.csv(power, file="power.csv")
