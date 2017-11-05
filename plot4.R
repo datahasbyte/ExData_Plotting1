@@ -1,4 +1,6 @@
 # Plot 4
+# correct legend
+
 library(sqldf)
 library(lubridate)
 
